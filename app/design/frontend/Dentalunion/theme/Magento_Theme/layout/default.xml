@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+         <block name="require.js" class="Magento\Framework\View\Element\Template" template="Magento_Theme::page/js/require_js.phtml" />
+           <referenceContainer name="after.body.start">
+            <block class="Magento\RequireJs\Block\Html\Head\Config" name="requirejs-config"/>
+            <block class="Magento\Translation\Block\Html\Head\Config" name="translate-config"/>
+            <block class="Magento\Translation\Block\Js" name="translate" template="Magento_Translation::translate.phtml"/>
+            <block class="Magento\Framework\View\Element\Js\Cookie" name="js_cookies" template="Magento_Theme::js/cookie.phtml"/>
+            <block class="Magento\Theme\Block\Html\Notices" name="global_notices" template="html/notices.phtml"/>
+        </referenceContainer>
+        
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+               
+            </arguments>
+        </referenceBlock>  
+        <referenceContainer name="header.container">
+<!--            <container name="header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div" before="-">
+                <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="panel header">
+                    <block class="Magento\Framework\View\Element\Template" name="skip_to_content" template="Magento_Theme::html/skip.phtml">
+                        <arguments>
+                            <argument name="target" xsi:type="string">contentarea</argument>
+                            <argument name="label" translate="true" xsi:type="string">Skip to Content</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" template="switch/languages.phtml"/>
+                    <block class="Magento\Framework\View\Element\Html\Links" name="top.links">
+                        <arguments>
+                            <argument name="css_class" xsi:type="string">header links</argument>
+                        </arguments>
+                    </block>
+                     </container>
+                  
+            </container>-->
+            <container name="header.panel.logo" label="Page Header Panel" htmlTag="div" htmlClass="container"  before="-">
+                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo"/>
+               
+            </container>
+             <container name="header.panel.wrapper" htmlClass="global-header" htmlTag="div" >
+                <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="container">
+                     <container name="header.panel.row" label="Page Header Panel Row" htmlTag="div" htmlClass="row">
+                         <container name="header.panel.row.col" label="Page Header Panel Row Col" htmlTag="div" htmlClass="col-sm-12">
+                             <container name="header.panel.row.col.navutl" label="Page Header Panel Row Col Navutl" htmlTag="div" htmlClass="nav-utilities">
+                                  <container name="header.panel.row.col.navutl.social" label="Page Header Panel Row Col Navutl Social" htmlTag="nav" htmlClass="l-social">
+                                  <block class="Magento\Cms\Block\Block" name="social_id">
+                                    <arguments>
+                                        <argument name="block_id" xsi:type="string">social_id</argument>
+                                    </arguments>
+                                </block>
+                                  </container>
+                            <container name="header.panel.row.col.navutl.link" label="Page Header Panel Row Col Navutl link" htmlTag="nav" htmlClass="nav-links">      
+                    <block class="Magento\Framework\View\Element\Template" name="skip_to_content" template="Magento_Theme::html/skip.phtml">
+                        <arguments>
+                            <argument name="target" xsi:type="string">contentarea</argument>
+                            <argument name="label" translate="true" xsi:type="string">Skip to Content</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" template="switch/languages.phtml"/>
+                    <block class="Magento\Framework\View\Element\Html\Links" name="top.links">
+                        <arguments>
+                            <argument name="css_class" xsi:type="string">header links</argument>
+                        </arguments>
+                    </block>
+                    </container>
+                      </container>
+                      </container>
+                      
+                        </container>
+                </container>
+                <container name="header.panel.navigation" label="Page Header navigation" htmlTag="div" htmlClass="navigation">
+                  <container htmlTag="div" htmlClass="container">
+                    <container htmlTag="div" htmlClass="row">
+                    <container htmlTag="div" htmlClass="col-md-9 col-md-offset-3">
+                    <container htmlTag="div" htmlClass="nav-main">
+                      
+                 <block class="Magento\Theme\Block\Html\Topmenu" name="catalog.topnav" template="html/topmenu.phtml" ttl="3600"/>   
+                
+                 </container>
+                 </container>
+                 </container>
+                 </container>
+                
+                </container>
+            </container>
+        </referenceContainer>
+        <referenceBlock name="top.links">
+    <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
+        <arguments>
+            <argument name="label" xsi:type="string" translate="true">My Account</argument>
+        </arguments>
+    </block>
+    <block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
+        <arguments>
+            <argument name="label" xsi:type="string" translate="true">Create an Account</argument>
+        </arguments>
+    </block>
+</referenceBlock>
+         <referenceContainer name="footer-container">
+            <container name="footer" as="footer" label="Page Footer" htmlTag="footer" htmlClass="page-footer">
+                <!-- <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="switch/stores.phtml"/> -->
+                <!-- <block class="Magento\Framework\View\Element\Html\Links" name="footer_links">
+                    <arguments>
+                        <argument name="css_class" xsi:type="string">footer links</argument>
+                    </arguments>
+                </block>  -->
+                <!-- <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="html/copyright.phtml"/> -->
+
+ <block class="Magento\Cms\Block\Block" name="footer_column_1">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_column_1</argument>
+                </arguments>
+                 
+            </block>
+ <block class="Magento\Theme\Block\Html\Footer" name="" template="html/footer.phtml" after=''/> 
+
+                <!-- <block class="Magento\Framework\View\Element\Template" name="report.bugs" template="Magento_Theme::html/bugreport.phtml" /> -->
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Theme\Block\Html\Footer" name="absolute_footer" template="html/absolute_footer.phtml" />
+        </referenceContainer> 
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\FormKey" name="formkey"/>
+        </referenceContainer>  
+<move element="minicart" destination="top.links"/>
+<move element="navigation.sections" destination="header.panel.wrapper"/>
+    </body>
+</page>
+	
