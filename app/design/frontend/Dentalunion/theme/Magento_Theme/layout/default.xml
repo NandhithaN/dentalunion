@@ -50,7 +50,7 @@
                      <container name="header.panel.row" label="Page Header Panel Row" htmlTag="div" htmlClass="row">
                          <container name="header.panel.row.col" label="Page Header Panel Row Col" htmlTag="div" htmlClass="col-sm-12">
                              <container name="header.panel.row.col.navutl" label="Page Header Panel Row Col Navutl" htmlTag="div" htmlClass="nav-utilities">
-                                  <container name="header.panel.row.col.navutl.social" label="Page Header Panel Row Col Navutl Social" htmlTag="nav" htmlClass="l-social">
+                            <container name="header.panel.row.col.navutl.social" label="Page Header Panel Row Col Navutl Social" htmlTag="nav" htmlClass="l-social" before="-">
                                   <block class="Magento\Cms\Block\Block" name="social_id">
                                     <arguments>
                                         <argument name="block_id" xsi:type="string">social_id</argument>
