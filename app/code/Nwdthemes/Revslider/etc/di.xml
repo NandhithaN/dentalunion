@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Widget\Model\Template\Filter" type="Nwdthemes\Revslider\Model\Template\Filter"/>
+    <type name="Magento\Framework\View\Result\Page">
+        <plugin name="revslider_layout_handle" type="Nwdthemes\Revslider\Plugin\RevsliderLayoutHandle" sortOrder="10"/>
+    </type>
+</config>

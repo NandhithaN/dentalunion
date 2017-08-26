@@ -134,6 +134,9 @@
         </referenceContainer>  
 <move element="minicart" destination="top.links"/>
 <move element="navigation.sections" destination="header.panel.wrapper"/>
+<referenceBlock name="advanced-search-link" remove="true"/>
+<referenceBlock name="top.search" remove="true"/>
+<!-- <move element="top.search" destination="top.links" before="top.links"/> -->
     </body>
 </page>
 	
