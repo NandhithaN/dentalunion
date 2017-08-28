@@ -37,10 +37,31 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-12">
-                <div class="products">
+              <?php 
+              if($title == 'Bulkvoordel')
+              {
+                ?>
+                <div class="products products--bulk">
+                <?php
 
-        <?php if ($title):?>
-        
+              }
+              if($title == 'Budget Line')
+              {
+                ?>
+                <div class="products products--budget">
+                <?php
+
+              }
+              if($title == 'Weekacties')
+              {
+                ?>
+                <div class="products">
+                <?php
+
+              }
+              ?>                
+
+        <?php if ($title):?>        
         <h2 class="l-title"><?php /* @escapeNotVerified */ echo $title; ?></h2><span class="l-tagline">Speciaal geselecteerd...</span>
         <?php endif ?>
         <ul class="products__list">
