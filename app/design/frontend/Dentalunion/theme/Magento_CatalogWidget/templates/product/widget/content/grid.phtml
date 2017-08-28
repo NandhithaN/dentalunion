@@ -61,7 +61,32 @@
               }
               ?>                
         <?php if ($title):?>        
-        <h2 class="l-title"><?php /* @escapeNotVerified */ echo $title; ?></h2><span class="l-tagline">Speciaal geselecteerd...</span>
+        <h2 class="l-title"><?php /* @escapeNotVerified */ echo $title; ?></h2>
+        
+        
+        <?php 
+              if($title == 'Bulkvoordel')
+              {
+                ?>
+              <span class="l-tagline">PAK JE VOORDEEL...</span>
+                <?php
+
+              }
+              if($title == 'Budget Line')
+              {
+                ?>
+                <span class="l-tagline">GOED MAAR TOCH GOEDKOOP...</span>
+                <?php
+
+              }
+              if($title == 'Weekacties')
+              {
+                ?>
+             <span class="l-tagline">SPECIAAL GESELECTEERD...</span>
+                <?php
+
+              }
+              ?>
         <?php endif ?>
         <ul class="products__list">
         <!--  <li> -->        
