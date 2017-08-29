@@ -100,3 +100,6 @@ page-header .nav-main li {
 }
 
 
+.page-header .nav-main li {
+    padding: 0px 20px 10px 10px !important;
+}
