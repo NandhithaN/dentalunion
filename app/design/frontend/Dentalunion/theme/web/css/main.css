@@ -36,7 +36,9 @@ ul > li, ol > li {
   {
   	top:-10px;
   }
-
+page-header .nav-main li {
+    padding: 0px 20px 10px 10px !important;
+}
   .navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top
   {
   	border-color:none !important;
