@@ -8,11 +8,8 @@
 
 /** @var $block \Magento\Checkout\Block\Cart\Sidebar */
 ?>
-<ul style='float:right;'>
-&nbsp;
-<li class="lst-l" style="border-left: 2px solid #333;line-height: 5px;">
+<li class="lst-l">
 <div data-block="minicart" class="minicart-wrapper">
-<img src="http://du2017.hypernode.io/media/wysiwyg/shopping-cart.png" width="12" height="12">
     <a class="action showcart1" href="<?php /* @escapeNotVerified */ echo $block->getShoppingCartUrl(); ?>"
        data-bind="scope: 'minicart_content'">
         <span class="text cart"><?php /* @escapeNotVerified */ echo __('Mijn winkelwagen'); ?></span>
@@ -60,4 +57,4 @@
     </script>
 </div>
 </li>
-</ul>
+

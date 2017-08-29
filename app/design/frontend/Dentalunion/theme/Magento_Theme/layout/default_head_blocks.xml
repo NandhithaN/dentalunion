@@ -3,7 +3,8 @@
     <!--Custom Styles-->
     <css src="css/main.css" />
 <css src="css/plugin.css" />
-
-
+<script src="js/plugin.bundle.js" />
+<script src="js/plugin.js" />
+<script src="js/script.bundle.js" />
 </head>
 </page>

@@ -93,7 +93,15 @@
             </container>
         </referenceContainer>
         <referenceBlock name="top.links">
-    <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
+
+ <block class="Magento\Cms\Block\Block" name="top-static-links">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">top-static-links</argument>
+                </arguments>
+                 
+            </block>
+
+   <!--  <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
         <arguments>
             <argument name="label" xsi:type="string" translate="true">My Account</argument>
         </arguments>
@@ -102,7 +110,7 @@
         <arguments>
             <argument name="label" xsi:type="string" translate="true">Create an Account</argument>
         </arguments>
-    </block>
+    </block> -->
 </referenceBlock>
          <referenceContainer name="footer-container">
             <container name="footer" as="footer" label="Page Footer" htmlTag="footer" htmlClass="page-footer">
@@ -134,8 +142,10 @@
         </referenceContainer>  
 <move element="minicart" destination="top.links"/>
 <move element="navigation.sections" destination="header.panel.wrapper"/>
-<referenceBlock name="advanced-search-link" remove="true"/>
-<referenceBlock name="top.search" remove="true"/>
+<referenceBlock name="advanced-search-link" remove="true"/> 
+<!-- <move element="top.search" destination="catalog.topnav" after="catalog.topnav" />
+ -->
+ <referenceBlock name="top.search" remove="true"/> 
 <!-- <move element="top.search" destination="top.links" before="top.links"/> -->
     </body>
 </page>
