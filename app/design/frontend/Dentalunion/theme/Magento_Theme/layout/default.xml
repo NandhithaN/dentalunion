@@ -17,14 +17,15 @@
             <block class="Magento\Theme\Block\Html\Notices" name="global_notices" template="html/notices.phtml"/>
         </referenceContainer>
         
-        <referenceBlock name="logo">
+     <!--    <referenceBlock name="logo">
             <arguments>
-                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
-               
+                <argument name="logo_file" xsi:type="string">images/logo.png</argument>               
             </arguments>
-        </referenceBlock>  
-        <referenceContainer name="header.container">
-<!--            <container name="header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div" before="-">
+        </referenceBlock>  --> 
+
+<!-- 
+            <referenceContainer name="header.container">
+            <container name="header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div" before="-">
                 <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="panel header">
                     <block class="Magento\Framework\View\Element\Template" name="skip_to_content" template="Magento_Theme::html/skip.phtml">
                         <arguments>
@@ -38,80 +39,81 @@
                             <argument name="css_class" xsi:type="string">header links</argument>
                         </arguments>
                     </block>
-                     </container>
-                  
-            </container>-->
-            <container name="header.panel.logo" label="Page Header Panel" htmlTag="div" htmlClass="container"  before="-">
-                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo"/>
-               
+                </container>
             </container>
-             <container name="header.panel.wrapper" htmlClass="global-header" htmlTag="div" >
-                <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="container">
-                     <container name="header.panel.row" label="Page Header Panel Row" htmlTag="div" htmlClass="row">
-                         <container name="header.panel.row.col" label="Page Header Panel Row Col" htmlTag="div" htmlClass="col-sm-12">
-                             <container name="header.panel.row.col.navutl" label="Page Header Panel Row Col Navutl" htmlTag="div" htmlClass="nav-utilities">
-                            <container name="header.panel.row.col.navutl.social" label="Page Header Panel Row Col Navutl Social" htmlTag="nav" htmlClass="l-social" before="-">
-                                  <block class="Magento\Cms\Block\Block" name="social_id">
-                                    <arguments>
-                                        <argument name="block_id" xsi:type="string">social_id</argument>
-                                    </arguments>
-                                </block>
-                                  </container>
-                            <container name="header.panel.row.col.navutl.link" label="Page Header Panel Row Col Navutl link" htmlTag="nav" htmlClass="nav-links">      
-                    <block class="Magento\Framework\View\Element\Template" name="skip_to_content" template="Magento_Theme::html/skip.phtml">
-                        <arguments>
-                            <argument name="target" xsi:type="string">contentarea</argument>
-                            <argument name="label" translate="true" xsi:type="string">Skip to Content</argument>
-                        </arguments>
-                    </block>
-                    <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" template="switch/languages.phtml"/>
-                    <block class="Magento\Framework\View\Element\Html\Links" name="top.links">
-                        <arguments>
-                            <argument name="css_class" xsi:type="string">header links</argument>
-                        </arguments>
-                    </block>
-                    </container>
-                      </container>
-                      </container>
-                      
-                        </container>
-                </container>
-                <container name="header.panel.navigation" label="Page Header navigation" htmlTag="div" htmlClass="navigation">
-                  <container htmlTag="div" htmlClass="container">
-                    <container htmlTag="div" htmlClass="row">
-                    <container htmlTag="div" htmlClass="col-md-9 col-md-offset-3">
-                    <container htmlTag="div" htmlClass="nav-main">
-                      
-                 <block class="Magento\Theme\Block\Html\Topmenu" name="catalog.topnav" template="html/topmenu.phtml" ttl="3600"/>   
-                
-                 </container>
-                 </container>
-                 </container>
-                 </container>
-                
-                </container>
+            <container name="header-wrapper" label="Page Header" as="header-wrapper" htmlTag="div" htmlClass="header content">
+                <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
+                    <arguments>
+                        <argument name="logo_img_width" xsi:type="number">189</argument>
+                        <argument name="logo_img_height" xsi:type="number">64</argument>
+                    </arguments>
+                </block>
             </container>
         </referenceContainer>
-        <referenceBlock name="top.links">
 
- <block class="Magento\Cms\Block\Block" name="top-static-links">
+ -->
+
+        <referenceContainer name="header.container">        
+        <container name="header.panel.wrapper">
+            <container name="header.panel.rowlogo" htmlClass='container' htmlTag='div'>
+            <container name="header.panel.row" htmlClass='row' htmlTag='div'>
+                <container name="header-wrapperr" htmlClass='col-sm-12' htmlTag='div'>
+                    <container class="header-wrapper-mobile" htmlClass='mobile-wrapper' htmlTag='div'>
+                        <block class="Magento\Theme\Block\Html\Header\Logo" name="logo" before="-"/>  
+                        <block class="Magento\Framework\View\Element\Template" name="btns" template="Magento_Theme::html/social_icons.phtml" />                      
+                        <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" after="btns"/>
+                        <block class="Magento\Checkout\Block\Cart\Sidebar" name="mobile-minicart" as="mobile-minicart" after="top.search" template="Magento_Checkout::cart/mobile-minicart.phtml" />
+                       <!--  <block class="Magento\Framework\View\Element\Template" name="minicart" as="minicart" template="Magento_Checkout::cart/minicart.phtml" /> -->
+                                                                       
+                    </container>
+                </container>
+            </container>
+            </container>
+
+     <container name="global-header" htmlClass='global-header' htmlTag="div">
+            <container name="global-header-container" htmlClass='container' htmlTag="div" >
+              <container name="global-header-row" htmlClass='row' htmlTag="div">
+               <container name="global-header-col-sm-12" htmlClass='col-sm-12' htmlTag='div'>
+                <container name="global-header-nav-utilities" htmlClass='nav-utilities' htmlTag='div'>                    
+
+                <block class="Magento\Cms\Block\Block" name="social_id" before="-">
                 <arguments>
-                    <argument name="block_id" xsi:type="string">top-static-links</argument>
+                   <argument name="block_id" xsi:type="string">social_id</argument>
                 </arguments>
-                 
-            </block>
+                </block> 
 
-   <!--  <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
+                 <container name="global-header-nav-links" htmlClass='nav-links' htmlTag='nav'>                    
+
+                <block class="Magento\Cms\Block\Block" name="top-static-links" before="-">
+                <arguments>
+                   <argument name="block_id" xsi:type="string">top-static-links</argument>
+                </arguments>
+                </block> 
+                <!-- <block class="Magento\Framework\View\Element\Template" name="minicart" as="minicart" /> -->
+                </container>
+
+                </container>
+
+            </container>
+           </container>
+         </container>
+        <block class="Magento\Theme\Block\Html\Topmenu" name="catalog.topnav" template="html/topmenu.phtml" ttl="3600" after="global-header-container"/> 
+        </container> 
+
+        </container>          
+        
+          
+        </referenceContainer>
+        
+      <!--  <referenceBlock name="top.links"> -->
+<!-- 
+        <block class="Magento\Cms\Block\Block" name="top-static-links">
         <arguments>
-            <argument name="label" xsi:type="string" translate="true">My Account</argument>
+        <argument name="block_id" xsi:type="string">top-static-links</argument>
         </arguments>
-    </block>
-    <block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
-        <arguments>
-            <argument name="label" xsi:type="string" translate="true">Create an Account</argument>
-        </arguments>
-    </block> -->
-</referenceBlock>
+        </block> --> 
+ <!-- </referenceBlock>  -->
+
          <referenceContainer name="footer-container">
             <container name="footer" as="footer" label="Page Footer" htmlTag="footer" htmlClass="page-footer">
                 <!-- <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="switch/stores.phtml"/> -->
@@ -140,13 +142,27 @@
         <referenceContainer name="content">
             <block class="Magento\Framework\View\Element\FormKey" name="formkey"/>
         </referenceContainer>  
-<move element="minicart" destination="top.links"/>
-<move element="navigation.sections" destination="header.panel.wrapper"/>
+
+ <!-- <move element="minicart" destination="header-wrapper-mobile" after="btns" />  -->
+
+<move element="minicart" destination="global-header-nav-links" after="top-static-links" />
+<!-- <move element="mobile-minicart" destination="header-wrapper-mobile" after="logo" /> -->
+<!-- <move element="navigation.sections" destination="header.panel.wrapper"/>
 <referenceBlock name="advanced-search-link" remove="true"/> 
-<!-- <move element="top.search" destination="catalog.topnav" after="catalog.topnav" />
  -->
- <referenceBlock name="top.search" remove="true"/> 
+<!-- 
+<referenceBlock name="register-link" remove="true" />           
+<referenceBlock name="authorization-link" remove="true" />      
+<referenceBlock name="wish-list-link" remove="true" />          
+<referenceBlock name="my-account-link" remove="true" />          -->
+
+<!-- <move element="navigation.sections" destination="header.panel"/>
+<move element="top.search" destination="catalog.topnav" after="top_custom_link" /> 
+  -->
+  
+
 <!-- <move element="top.search" destination="top.links" before="top.links"/> -->
+
     </body>
 </page>
 	

@@ -8,15 +8,19 @@
 
 /** @var $block \Magento\Checkout\Block\Cart\Sidebar */
 ?>
+<!-- <a class="l-minicart" href="#">
+                  <svg class="l-icon" width="26" height="26">
+                    <use xlink:href="<?php echo $this->getViewFileUrl('images/icons-svg.svg#shopping-cart'); ?>"></use>
+                  </svg></a> -->
                       
-<li>                      
-<div data-block="minicart" class="minicart-wrapper">
-    <a class="action l-minicart" href="<?php /* @escapeNotVerified */ echo $block->getShoppingCartUrl(); ?>"
+                  
+<div data-block="mobile_minicart" class="minicart-wrapper">
+    <a class="action l-minicart-mobile" href="<?php /* @escapeNotVerified */ echo $block->getShoppingCartUrl(); ?>"
        data-bind="scope: 'minicart_content'">
-       <svg class="l-icon" width="12" height="12">
+       <svg class="l-icon" width="26" height="26">
 <use xlink:href="<?php echo $this->getViewFileUrl('images/icons-svg.svg#shopping-cart'); ?>"></use>
 </svg>
-        <span class="text"><?php /* @escapeNotVerified */ echo __('Mijn winkelwagen'); ?></span>
+       
         <span class="counter qty empty"
               data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
             
@@ -36,15 +40,15 @@
         <div class="block block-minicart empty"
              data-role="dropdownDialog"
              data-mage-init='{"dropdownDialog":{
-                "appendTo":"[data-block=minicart]",
-                "triggerTarget":".l-minicart",
+                "appendTo":"[data-block=mobile_minicart]",
+                "triggerTarget":".l-minicart-mobile",
                 "timeout": "2000",
                 "closeOnMouseLeave": false,
                 "closeOnEscape": true,
                 "triggerClass":"active",
                 "parentClass":"active",
                 "buttons":[]}}'>
-            <div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+            <div id="minicart-content-wrapper" data-bind="scope: 'mobile_minicart_content'">
                 <!-- ko template: getTemplate() --><!-- /ko -->
             </div>
             <?php echo $block->getChildHtml('minicart.addons'); ?>
@@ -64,8 +68,3 @@
     }
     </script>
 </div>
-
-</li>
-</ul>
-<!-- </div>
-</div> -->

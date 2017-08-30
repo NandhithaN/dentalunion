@@ -12,9 +12,11 @@
 ?>
 <?php if (!$block->getIsDisabled()): ?>
 <li>
+<span>
     <a href="<?php echo $block->escapeHtml($block->getHref())?>"
         <?php if ($title = $block->getTitle()):?> title="<?php echo $block->escapeHtml(__($title))?>"<?php endif;?>>
         <?php echo $block->escapeHtml(__($block->getLabel()))?>
     </a>
+ </span>   
 </li>
 <?php endif; ?>
