@@ -103,3 +103,56 @@ page-header .nav-main li {
 .page-header .nav-main li {
     padding: 0px 20px 10px 10px !important;
 }
+
+/********************/
+.page-header .mobile-wrapper .global-search {
+    display: inline-block;
+    fill: #003f79;
+    float: right;
+    margin: 15px 15px 0 0
+}
+
+@media (min-width:992px) {
+    .page-header .mobile-wrapper .global-search {
+        position: absolute;
+        right: 0;
+        top: 62px;
+        fill: #fff;
+        z-index: 99
+    }
+}
+
+@media (min-width:992px) {
+    .page-header .mobile-wrapper .global-search .l-icon {
+        width: 16px;
+        height: 16px
+    }
+}
+@media only screen and (max-width: 980px)
+{
+.navigation {
+    background: none !important;
+    box-sizing: border-box;
+}
+}
+
+.l-minicart-mobile
+{
+  display: none !important;
+}
+
+@media only screen and (max-width: 980px)
+{
+  .l-minicart-mobile
+  {
+    display: block !important;
+    display: inline-block;
+    fill: #003f79;
+    float: right;
+    margin: 15px 15px 0 0;
+  }
+
+}
+.logo {
+    margin-top: 44px !important;
+  }
