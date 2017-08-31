@@ -156,3 +156,17 @@ page-header .nav-main li {
 .logo {
     margin-top: 44px !important;
   }
+
+/***** 31-08-17ss  **/
+.minicart-items-wrapper
+{
+	height:auto !important;
+	padding:0px !important;
+}
+
+
+.product-item-details
+{
+	width:100% !important;
+	position:absolute !important;
+}
