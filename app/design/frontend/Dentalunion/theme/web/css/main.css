@@ -158,12 +158,15 @@ page-header .nav-main li {
   }
 
 /***** 31-08-17ss  **/
+
+@media only screen and (min-width: 240px) and (max-width: 768px)
+{
 .minicart-items-wrapper
 {
 	height:auto !important;
 	padding:0px !important;
 }
-
+}
 
 .product-item-details
 {
