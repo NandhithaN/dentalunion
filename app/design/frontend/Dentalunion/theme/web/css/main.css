@@ -274,12 +274,12 @@ a.l-btn--grey {
 
 .sorter
 {
-    float:left;
+    float:left !important;
 }
 .modes {
-    display: inline-block;
-    float: right;
-    margin-right: 20px;
+    display: inline-block !important;
+    float: right !important;
+    margin-right: 20px !important;
 }
 .page-products .toolbar .limiter {
     display:block !important;
@@ -293,8 +293,8 @@ styles-m.css:1
     display: none !important;
 }
 .limiter {
-    float:none; 
-    position: relative;
-    top: 40px;
-    margin-left: 60%;
+    float:none !important; 
+    position: relative !important;
+    top: 40px !important;
+    margin-left: 60% !important;
 }
