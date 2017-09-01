@@ -1,0 +1,308 @@
+//- All html mixins
+//- Image mixin
+mixin img(obj)
+  -if(obj && obj.src){
+    img(src=obj.src, alt=obj.alt, title=obj.alt, width=obj.width, height=obj.height, class=obj.class, id=obj.id)
+  -}else{
+    img(src=obj[0], alt=obj[1], title=obj[1], width=obj[2], height=obj[3], class=obj[4], id=obj[5])
+  -}
+  //- img(src=obj.src, alt=obj.alt, title=obj.alt, width=obj.width, height=obj.height, class=obj.class)
+
+//- loader
+mixin loader()
+  .loader
+    +img(["images/loader.gif", "Loading"])
+
+//- icon mixin
+mixin svgicon(id, obj)
+  -var defaultClass = 'l-icon'
+  -var obj = obj || {}
+  //- svg(class=[obj.class, defaultClass], width=obj.width || 18, height=obj.height || 18,
+  //-     viewBox="0 0" + " " + [obj.width] + " " + [obj.height] +"")
+  svg(class=[obj.class, defaultClass],width=obj.width || 12, height=obj.height || 12)
+    use(xlink:href=obj.path || 'images/icons-svg.svg#' + id)
+
+mixin widget(modifierClass)
+  .widget(class= modifierClass ? "widget--"+modifierClass : '')
+    block
+
+mixin academy(obj)
+  .academy__list
+    .l-heading
+      h3= obj.title
+      i
+        +svgicon(obj.svg, {width: 10})
+    ul.l-list
+      each val in obj.list
+        li
+          a(href="#")
+            i
+              +svgicon('red_arrow', {width: 10})
+            span= val
+
+//- Tab mixin
+mixin tab(obj)
+  ul.nav.nav-tabs(id='#{obj.listId}',class='#{obj.listClass}')
+    each val, index in obj.items
+      -if(index == obj.current){
+        li.active
+          a(href="#{val.url}", title="#{val.item}")
+            span!=val.item
+      -}else{
+        li
+          a(href="#{val.url}", title="#{val.item}")
+            span!=val.item
+      -}
+
+//- sme block mixin
+mixin company__block(obj)
+  .company__block&attributes(attributes)
+    .company__header
+      if obj.ratingId
+        .star-rating
+          input(id='#{obj.ratingId}',class='#{obj.ratingClass}' type="number", value="4")
+      if !obj.plusHide
+        if obj.hasPopover
+          .tb-popover
+            a.popover__trigger.expand(href='javascript:void(0)') +
+            .popover__content
+              .popover__label
+                p Selected Companies:
+                  strong 1/120
+                a(href="", title="Link").l-btn.l-btn--primary
+                  i.l-icon.l-icon--white
+                  span Compare
+        else if obj.hasUnfollow
+          .tb-popover
+            a.popover__trigger.unfollow(href='javascript:void(0)') +
+            .popover__content
+              strong Click to unfollow
+        else
+          a.expand(href="#") +
+    .company__content
+      if obj.img
+        if obj.url
+          a(href="#", class=obj.url[1])
+            +img({src:obj.img[0], alt:obj.img[1], width:obj.img[2], height:obj.img[3], class: obj.img[4] })
+        else
+            +img({src:obj.img[0], alt:obj.img[1], width:obj.img[2], height:obj.img[3], class: obj.img[4] })
+      if obj.h2 || obj.summary || block
+        .company__summary
+          if obj.h2
+            if obj.h2[2]
+              h2(class=obj.h2[1])
+                a(href="#")=obj.h2[0]
+            else
+              h2(class=obj.h2[1])=obj.h2[0]
+          if obj.summary
+            p= obj.summary
+          if block
+              block
+
+mixin buy__block(obj)
+  .buy__block&attributes(attributes)
+    if obj.img
+      if obj.url
+        a(href="#", class=obj.url[1])
+          +img({src:obj.img[0], alt:obj.img[1], width:obj.img[2], height:obj.img[3], class: obj.img[4] })
+          if obj.featured
+            span.buy__ribbon=obj.featured
+          if obj.hoverText
+            .hover-block
+              p=obj.hoverText
+      else
+        .buy__thumb
+          +img({src:obj.img[0], alt:obj.img[1], width:obj.img[2], height:obj.img[3], class: obj.img[4] })
+          if obj.featured
+            span.buy__ribbon=obj.featured
+          if obj.hoverText
+            .hover-block
+              p=obj.hoverText
+    if obj.tags || obj.h2 || obj.price || obj.content || block
+      .buy__content(class= obj.featured ? 'featured' : '')
+        if obj.tags
+          ul.buy__tags
+            each tag in obj.tags
+              li #{tag}
+        if obj.h2
+          if obj.h2[2]
+            h2(class=obj.h2[1])
+              a(href="#")=obj.h2[0]
+          else
+            h2(class=obj.h2[1])=obj.h2[0]
+        if obj.price
+          h3.price= obj.price
+            span SAR
+        if obj.delivery
+          .buy_delivery
+            h4 Delivery days:
+              small 7
+        if obj.date
+          .buy_delivery
+            h4 Date of post:
+              small 01 Jul. 2015
+        if obj.content
+          .buy__logo
+            -if (obj.content[0])
+              +img({src:obj.content[0], alt:obj.content[1], width:obj.content[2], height:obj.content[3] })
+            .details
+              p!= obj.content[4]
+        if block
+            block
+    if obj.social || obj.readmore
+      .buy__footer
+        if obj.social
+          ul
+            li.facebook
+              a(href="#") facebook
+            li.twitter
+              a(href="#") twitter
+            li.email
+              a(href="#") email
+        if obj.readmore
+          a.legoBtn--more(href="#", class=obj.readmore[1])=obj.readmore[0]
+
+mixin sellBlock(obj)
+  .buy__block&attributes(attributes)
+      if obj.top
+        .buy__top
+          ul
+            li.close
+              a(href="#") close
+            li.tick
+              a(href="#") tick
+      if obj.img
+        if obj.url
+          a(href="#", class=obj.url[1])
+            +img({src:obj.img[0], alt:obj.img[1], width:obj.img[2], height:obj.img[3], class: obj.img[4] })
+            if obj.featured
+              span.buy__ribbon=obj.featured
+            if obj.hoverText
+              .hover-block
+                p=obj.hoverText
+        else
+          .buy__thumb
+            +img({src:obj.img[0], alt:obj.img[1], width:obj.img[2], height:obj.img[3], class: obj.img[4] })
+            if obj.featured
+              span.buy__ribbon=obj.featured
+            if obj.hoverText
+              .hover-block
+                p=obj.hoverText
+      if obj.tags || obj.h2_title_featured || obj.content || obj.images || block
+        .buy__content(class= obj.featured ? 'featured' : '')
+          if obj.tags
+            ul.buy__tags
+              each tag in obj.tags
+                li #{tag}
+          if obj.h2
+            if obj.h2[1]
+              h2(class=obj.h2[1])
+                a(href="#")=obj.h2[0]
+            else
+              h2(class=obj.h2[1])=obj.h2[0]
+            block
+          if obj.h2_title_featured
+            if obj.h2_title_featured[1]
+              h2.title_featured(class=obj.h2_title_featured[1])
+                a(href="#")=obj.h2_title_featured[0]
+            else
+              h2(class=obj.h2_title_featured[1])=obj.h2_title_featured[0]
+            block
+          if obj.price
+            h3.price= obj.price
+              span SAR
+            block
+          if obj.delivery
+            .buy_delivery
+              h4 Delivery days:
+                small 7
+          if obj.content
+            .buy__logo
+              -if (obj.content[0])
+                +img({src:obj.content[0], alt:obj.content[1], width:obj.content[2], height:obj.content[3] })
+              .details
+                p
+                  span!= obj.content[4]
+          if obj.content_txt
+            .buy__logo
+              -if (obj.content_txt[0])
+                +img({src:obj.content_txt[0], alt:obj.content_txt[1], width:obj.content_txt[2], height:obj.content_txt[3] })
+              .details
+                p.text
+                  span!= obj.content_txt[4]
+                  != obj.content_txt[5]
+
+      if obj.social || obj.readmore
+        .buy__footer
+          if obj.social
+            ul
+              li.facebook
+                a(href="#") facebook
+              li.twitter
+                a(href="#") twitter
+              li.email
+                a(href="#") email
+          else
+            if(!obj.notext)
+              p product
+          if obj.readmore
+            a.legoBtn--more(href="#", class=obj.readmore[1])=obj.readmore[0]
+//- Tab mixin
+mixin profileNav(obj,classname,current)
+  each val, index in obj
+    div.ph__item(class= (index === parseInt(current)) ? 'active' : '', class=[classname], class=(current=='all') ? 'active': '')
+      -if(val.itemRating){
+        span!=val.itemTitle
+        +rating(val.ratingObj)
+        span.star-rating__count 2390 reviewers
+      -}else{
+        a(title="#{val.itemTitle}",href="#")
+          span!=val.itemTitle
+          strong!=val.itemNo
+      -}
+
+
+//- Tab mixin revised
+mixin tabsMixin(obj,classname)
+  .tab(class=classname)
+    .navTabs
+      .container
+        ul.nav.nav-tabs(id='#{obj.listId}',class='#{obj.listClass}')
+          each val, index in obj.items
+            li(class= index == obj.current ? 'active' : '')
+              a(href="#"+"#{val.url}", title="#{val.item}")
+                span!=val.item
+                  if(val.notification)
+                    i.nav-tabs__notification #{val.notification}
+    .tabContent
+      each val, index in obj.items
+        .tab-pane(class= index == obj.current ? 'active' : '', id="#{val.url}")
+          -if(val.content)
+            !=templateRender(val.content, val.options || {})
+
+//- tab ends here
+
+//- pagination
+mixin pagination(start, numpages, curr)
+  if(numpages > 1)
+    ul.l-pagination
+      - if(curr > 1)
+        li.prev
+          a(href="#")
+      - else
+        li.disabled.prev
+          a(href="#")
+      - for(var i = start; i <= numpages; ++i)
+        - if (i <= numpages && i > 0)
+          - if (i !== curr)
+            li
+              a(href='#'+i)=i
+          - else
+            li.active
+              a(href='#'+i)=i
+      - if(curr < numpages)
+        li.next
+          a(href="#")
+      - else
+        li.disabled.next
+          a(href="#")

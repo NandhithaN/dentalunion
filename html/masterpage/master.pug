@@ -1,0 +1,34 @@
+include _mixin
+-var page = ''
+-var bodyClass = ''
+-var pagetitle = ''
+-var sitetitle = ''
+block variables
+doctype html
+html.no-js.loading(dir=lang == 'ar' ? 'rtl' : 'ltr')
+  head
+    title Dental Union
+    link(rel="shortcut icon", href="favicon.ico", type="image/vnd.microsoft.icon")
+    meta(http-equiv='Content-Type', content='text/html;charset=utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    meta(name='keywords', content='Dubai World Trade Centre Media Centre, DWTC Media Centre')
+    meta(name='description', content="Welcome to the Dubai Sports World")
+    meta(property="og:image", content="")
+    meta(property="og:title" content="")
+    meta(property="og:url" content="")
+    meta(property="og:site_name" content="")
+    meta(name="format-detection" content="telephone=no")
+    meta(http-equiv="X-UA-Compatible",content="IE=edge")
+
+    include _styleLinks
+    block stylelinks
+
+    block head
+  body.no-js(dir=lang == 'ar' ? 'rtl' : 'ltr', class=page + bodyClass)
+    // Page Wrapper
+    .page-wrapper
+      block header
+      block body
+      block footer
+    include _scriptLinks
+    block foot
