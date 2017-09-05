@@ -298,3 +298,117 @@ styles-m.css:1
     top: 40px !important;
     margin-left: 60% !important;
 }
+
+
+/****************04-09-2017*******************/
+
+.sorter-options {
+    margin: 7px 0 0 7px !important;
+    width: auto !important;
+    color: #003f79 !important;
+    height:22px;
+}
+
+.toolbar-products {
+     margin-bottom: 0px !important;
+    padding: 0 10px !important;
+    font-size: 10px !important;
+    text-align: center !important;
+    font-weight: 400 !important;
+    font-size: 10px !important;
+    color: #b2b2b2 !important;
+}
+
+.limiter-options {
+    margin: 0 5px 0 7px !important;
+    color: #003f79 !important;
+    width: auto !important;    
+    height: 22px !important;
+  }  
+
+.limiter {
+    float: none !important;
+    position: relative !important;
+    top: 40px !important;
+    margin-left: 74% !important;
+}
+
+
+.modes-mode {
+    color: #7d7d7d !important;
+    border: 1px solid #d1d1d1 !important;
+    border-right: 0 !important;
+    float: left !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+  padding: 0px 2px !important;
+    text-align: center !important;
+    margin-top: 17px !important;
+    display: inline-block !important;
+    text-decoration: none !important;    
+}
+
+.modes-mode:last-child {
+    border-right: 1px solid #d1d1d1 !important;
+}
+
+.pages a.page:visited {
+    color: #e1007a !important;
+}
+.pages a.page {    
+    display: inline-block !important;
+    padding: 0px 10px !important;
+    text-decoration: none !important;
+	color: #b2b2b2 !important;
+	border: 1px solid #ccc !important;
+	border-radius: 4px !important;
+	}
+
+
+.pages .item {    
+    font-size: 12px !important;
+    letter-spacing: normal !important; 
+    line-height: 32px !important;
+    margin: 0 2px 0 0 !important;     
+    display: inline-block !important;
+    vertical-align: middle !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    margin-right: 15px !important;
+}
+
+
+.pages .action.next {
+    margin-left: 12px !important;    
+    text-align: center !important;
+    color: #b2b2b2 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+}
+
+.pages .action.previous
+{
+	text-align: center !important;
+    color: #b2b2b2 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important; 	
+
+}
+
+.pages strong.page {    
+    font-size: 12px !important;
+    letter-spacing: normal !important;
+    line-height: 32px !important;
+    color: #fff !important;
+    display: inline-block !important;
+    font-weight: 700 !important;
+    padding: 0 10px !important;    
+    border-radius: 4px !important;
+    background: #e1007a !important;
+    border-color: #e1007a !important;
+}
+
+.products.wrapper~.toolbar .pages
+{
+	float:right !important;
+}
