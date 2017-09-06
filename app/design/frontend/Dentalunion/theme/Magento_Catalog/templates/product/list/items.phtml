@@ -158,7 +158,21 @@ switch ($type = $block->getType()) {
             <div class="row">
             <div class="col-sm-12">
             <section class="section section--product-alternate">
+            <?php 
+            if($type == 'related')
+            {
+
+            ?>
             <div class="products products--bulk">
+            <?php
+            }
+            if($type == 'upsell')
+            {
+            ?>
+            <div class="products products--budget">            
+            <?php
+            }           
+            ?>
 
         <?php if ($type == 'related'): ?>
           <!--   <div class="block <?php /* @escapeNotVerified */ //echo $class; ?>" data-mage-init='{"relatedProducts":{"relatedCheckbox":".related.checkbox"}}' data-limit="<?php /* @escapeNotVerified */ //echo $limit; ?>" data-shuffle="<?php /* @escapeNotVerified */ //echo $shuffle; ?>"> -->
