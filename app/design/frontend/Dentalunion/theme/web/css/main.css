@@ -444,3 +444,7 @@ span.base {
 .products .products__list li {
     width: 33.333% !important;
 }
+.products .products__price
+{
+	min-height: 75px !important;
+}
