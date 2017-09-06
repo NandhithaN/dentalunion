@@ -441,9 +441,7 @@ span.base {
     color: #003f79;
     text-transform: uppercase;
 }
-.products .products__list li {
-    width: 33.333% !important;
-}
+
 .products .products__price
 {
 	min-height: 75px !important;
