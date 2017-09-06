@@ -192,6 +192,7 @@
         <referenceBlock name="product.info.review" remove="true"/>
         <referenceContainer name="product.info.stock.sku" remove="true"/>
         <referenceContainer name="product.info.social" remove="true"/>
+        <referenceBlock name="product.info.overview" remove="true"/>
         
     </body>
 </page>
