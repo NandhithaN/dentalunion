@@ -10,13 +10,32 @@
  * @var $block \Magento\Theme\Block\Html\Title
  */
 $cssClass = $block->getCssClass() ? ' ' . $block->getCssClass() : '';
+
+
+
 $title = '';
 if (trim($block->getPageHeading())) {
     $title = '<span class="base" data-ui-id="page-title-wrapper" ' .  $block->getAddBaseAttribute() . '>'
         . $block->escapeHtml($block->getPageHeading()) . '</span>';
 }
 ?>
-<?php if ($title): 
+
+<?php
+
+if($block->getAddBaseAttributeAria() == 'page-title-heading toolbar-amount')
+{
+?>
+
+<section class="spotlight spotlight--category">
+          <div class="spotlight__image"><img src="<?php echo $this->getViewFileUrl('images/temp/spotlight_img_01.jpg'); ?>" alt="" style="width:2000px;height:150px;">
+            <h2 class="l-page-title"><?php echo strip_tags($title); ?></h2>
+          </div>
+</section>
+
+<?php
+}else{
+
+ if ($title): 
     
     if(trim($cssClass) == 'product')
     {
@@ -39,4 +58,6 @@ if (trim($block->getPageHeading())) {
 </div>
 <?php 
     }
-endif; ?>
+endif; 
+}
+?>

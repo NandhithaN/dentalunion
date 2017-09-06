@@ -412,3 +412,31 @@ styles-m.css:1
 {
 	float:right !important;
 }
+
+/************06-09-17************/
+
+.spotlight {
+    margin-bottom:0px;
+}
+.spotlight--category .spotlight__image {
+    position: relative;
+}
+.spotlight--category .spotlight__image .l-page-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.l-page-title {
+    font-weight: 700;
+    font-size:36px;
+    color: #003f79;
+    text-transform: uppercase;
+}
+span.base {    
+    left: 50%;
+    font-weight: 700;
+    font-size: 36px !important;
+    color: #003f79;
+    text-transform: uppercase;
