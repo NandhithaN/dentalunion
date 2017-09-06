@@ -7,34 +7,39 @@
 // @codingStandardsIgnoreFile
 
 ?>
-<?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')):?>
-    <div class="product info detailed">
-        <?php $layout = $block->getLayout(); ?>
-        <div class="product data items" data-mage-init='{"tabs":{"openedState":"active"}}'>
-            <?php foreach ($detailedInfoGroup as $name):?>
-                <?php
-                    $html = $layout->renderElement($name);
-                    if (!trim($html)) {
-                        continue;
-                    }
-                    $alias = $layout->getElementAlias($name);
-                    $label = $block->getChildData($alias, 'title');
-                ?>
-                <div class="data item title"
-                     aria-labeledby="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title"
-                     data-role="collapsible" id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>">
-                    <a class="data switch"
-                       tabindex="-1"
-                       data-toggle="switch"
-                       href="#<?php /* @escapeNotVerified */ echo $alias; ?>"
-                       id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title">
-                        <?php /* @escapeNotVerified */ echo $label; ?>
-                    </a>
+<?php $detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml');
+$layout = $block->getLayout(); 
+$html = $layout->renderElement($detailedInfoGroup[0]);
+$html_1 = $layout->renderElement($detailedInfoGroup[1]);
+?>      
+         <div class="row">
+            <div class="col-sm-12">
+              <section class="section section--generic section--generic-details">
+                <div class="generic">
+                  <article>
+                    <h3 class="l-title">product<span>omschrijving</span></h3>
+                    <?php echo $html; ?>
+                  </article>
                 </div>
-                <div class="data item content" id="<?php /* @escapeNotVerified */ echo $alias; ?>" data-role="content">
-                    <?php /* @escapeNotVerified */ echo $html; ?>
+              </section>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <section class="section section--generic section--generic-details">
+                <div class="generic">
+                  <h3 class="l-title">Extra<span>informatie</span></h3>
+                  <ul class="generic__list">
+                  <?php //echo $html_1; ?>
+                    <li> <span class="generic__label">Attribuute label</span><span class="generic__value">Attribuut value    </span></li>
+                    <li> <span class="generic__label">Attribuute label</span><span class="generic__value">Attribuut value    </span></li>
+                    <li> <span class="generic__label">Attribuute label</span><span class="generic__value">Attribuut value    </span></li>
+                    <li> <span class="generic__label">Attribuute label</span><span class="generic__value">Attribuut value    </span></li>
+                    <li> <span class="generic__label">Attribuute label</span><span class="generic__value">Attribuut value    </span></li>
+                    <li> <span class="generic__label">Attribuute label</span><span class="generic__value">Attribuut value    </span></li>
+                    <li> <span class="generic__label">Attribuute label</span><span class="generic__value">Attribuut value</span></li>
+                  </ul>
                 </div>
-            <?php endforeach;?>
-        </div>
-    </div>
-<?php endif; ?>
+              </section>
+            </div>
+          </div>

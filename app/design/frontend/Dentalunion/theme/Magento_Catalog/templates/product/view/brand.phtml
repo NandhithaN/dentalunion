@@ -1,12 +1,8 @@
 <?php
 
 ?>
-<style type="text/css">
-button#product-addtocart-button {
-    background: #e1007a;
-    color: #fff;
-    border: none;
-    padding: 14px 72px;
-}
-</style>
-<h3 class="cart__brand"><span>Merk: </span><a href="#">Kettenbach</a></h3>
+<?php
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_product = $block->getProduct();
+?>
+<h3 class="cart__brand"><span><?php echo $_product->getResource()->getAttribute('brand')->getFrontendLabel();?>: </span><a href="#"><?php echo $_product->getResource()->getAttribute('brand')->getFrontend()->getValue($_product)?></a></h3>

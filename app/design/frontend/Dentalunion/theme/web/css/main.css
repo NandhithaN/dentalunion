@@ -446,3 +446,33 @@ span.base {
 {
 	min-height: 75px !important;
 }
+
+/*******/
+
+.cart h2.cart__title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #003f79;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+     font-family: Lato,sans-serif !important;
+}
+
+button#product-addtocart-button {
+    background: #e1007a;
+    color: #fff;
+    border: none;
+    padding: 14px 72px;
+}
+
+.cart h3.cart__brand {
+    font-weight: 700;
+    font-size: 12px !important;
+    color: #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.cart h3.cart__brand a {
+    color: #e1007a !important;
+    font-size: 12px !important;
+}
