@@ -440,3 +440,7 @@ span.base {
     font-size: 36px !important;
     color: #003f79;
     text-transform: uppercase;
+}
+.products .products__list li {
+    width: 33.333% !important;
+}
