@@ -1,0 +1,249 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Grouped product data template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\BaseImage
+ * @var $block \Magento\GroupedProduct\Block\Product\View\Type\Grouped
+ */
+?>
+<?php $block->setPreconfiguredValue(); ?>
+<?php $_product = $block->getProduct(); ?>
+<?php $_associatedProducts = $block->getAssociatedProducts(); ?>
+<?php $_hasAssociatedProducts = count($_associatedProducts) > 0; ?>
+
+<style type="text/css">
+
+.cart .cart__group {
+    margin-bottom: 10px
+}
+
+.cart .cart__group li {
+    padding: 6px 0;
+    border-bottom: 1px solid #ccc
+}
+
+@media (min-width:480px) {
+    .cart .cart__group li .cart__group-container {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+}
+
+@media (min-width:768px) {
+    .cart .cart__group li .cart__group-container {
+        display: block
+    }
+}
+
+@media (min-width:992px) {
+    .cart .cart__group li .cart__group-container {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+}
+
+.cart .cart__group .cart__product-wrapper {
+    margin-right: 15px;
+    display: inline-block
+}
+
+@media (min-width:992px) {
+    .cart .cart__group .cart__product-wrapper {
+        width: 220px;
+        margin-right: 15px
+    }
+}
+
+@media (min-width:1200px) {
+    .cart .cart__group .cart__product-wrapper {
+        width: 255px;
+        margin-right: 30px
+    }
+}
+
+.cart .cart__group .cart__product-wrapper .cart__product {
+    display: block
+}
+
+.cart .cart__group .cart__group-wrapper {
+    margin-bottom: 10px;
+    display: block
+}
+
+@media (min-width:480px) {
+    .cart .cart__group .cart__group-wrapper {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        margin-bottom: 0
+    }
+}
+
+@media (min-width:768px) {
+    .cart .cart__group .cart__group-wrapper {
+        margin-bottom: 10px;
+        display: block
+    }
+}
+
+@media (min-width:992px) {
+    .cart .cart__group .cart__group-wrapper {
+        margin-bottom: 0;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex
+    }
+}
+
+.cart .cart__group .cart__product {
+    text-transform: uppercase
+}
+
+.cart .cart__group .cart__product a {
+    color: #003f79;
+    font-size: .875rem;
+    font-weight: 700
+}
+
+.cart .cart__group .cart__product-price {
+    display: inline-block
+}
+
+.cart .cart__group .cart__product-price span {
+    color: #333;
+    font-weight: 700;
+    font-size: 1.125rem
+}
+
+.cart .cart__group form {
+    display: inline-block
+}
+
+.cart .cart__group .cart__quantity {
+    margin-left: 15px;
+    display: inline-block
+}
+
+@media (min-width:992px) {
+    .cart .cart__group .cart__quantity {
+        margin-left: 20px
+    }
+}
+
+@media (min-width:1200px) {
+    .cart .cart__group .cart__quantity {
+        margin-left: 30px
+    }
+}
+
+.cart .cart__group figure {
+    display: inline-block;
+    margin-right: 15px;
+    width: 56px
+}
+
+@media (min-width:992px) {
+    .cart .cart__group figure {
+        margin-right: 30px
+    }
+}
+
+.cart .cart__group .cart__additionalinfo span {
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.cart .cart__group .cart__additionalinfo span+span {
+    border-left: 2px solid #ccc;
+    margin-left: 5px;
+    padding-left: 5px
+}
+
+.cart .cart__group .cart__input-label {
+    margin-right: 10px;
+    margin-left: 10px
+}
+
+@media (min-width:1200px) {
+    .cart .cart__group .cart__input-label {
+        margin-left: 20px
+    }
+}
+
+.cart .cart__group--configurable li {
+    padding: 10px 0
+}
+</style>
+
+<ul class="cart__group">
+
+        <?php if ($_hasAssociatedProducts): ?>
+        <?php foreach ($_associatedProducts as $_item): ?>
+<li>
+<div class="cart__group-container"> 
+<div class="cart__group-wrapper">
+<figure><img src="<?php echo $block->getViewFileUrl('images/product_thumb_01.jpg'); ?>" alt="product thumb 01"></figure>
+<div class="cart__product-wrapper">
+<h4 class="cart__product"><a href="#"><?php echo $block->escapeHtml($_item->getName()) ?></a></h4>
+<div class="cart__additionalinfo"><span>232725</span><span>BS01</span></div>
+</div>
+</div>
+<div class="cart__product-price"><span>
+  <?php //if ($block->getCanShowProductPrice($_product)): ?>
+                        <?php //if ($block->getCanShowProductPrice($_item)): ?>
+                            <?php /* @escapeNotVerified */ echo $block->getProductPrice($_item) ?>
+                        <?php //endif; ?>
+                     <?php //endif; ?>
+</span></div>
+
+<input class="cart__quantity" type="number" name="quantity" min="1" max="5" value="1">
+</div>
+</li>
+        <?php endforeach; ?>
+        <?php else: ?>		
+		<li>
+<div class="cart__group-container"> 
+<div class="cart__group-wrapper">
+<figure><img src="" alt="product thumb 01"></figure>
+<div class="cart__product-wrapper">
+<h4 class="cart__product"><a href="#">  <?php /* @escapeNotVerified */ echo __('No options of this product are available.') ?></a></h4>
+<div class="cart__additionalinfo"><span></span><span></span></div>
+</div>
+</div>
+<div class="cart__product-price"><span></span></div>
+<form>
+</form>
+</div>
+</li>
+        <?php endif; ?>
+</ul>
+
+
