@@ -12,6 +12,10 @@
                 <width>140</width>
                 <height>140</height>
             </image>
+            <image id="grouped_list_product_thumbnail" type="thumbnail">
+                <width>75</width>
+                <height>90</height>
+            </image>
             <image id="cart_cross_sell_products" type="thumbnail">
                 <width>152</width>
                 <height>188</height>
