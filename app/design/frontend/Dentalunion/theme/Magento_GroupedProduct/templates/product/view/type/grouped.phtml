@@ -224,24 +224,13 @@ input[type="number"] {
 //print_r($_item);
 //echo 'ID='.$_item->getThumbnail();
 
-$productImage = $block->getImage($_item, 'product_base_image')->getImageUrl();
+//$productImage = $block->getImage($_item, 'product_base_image')->getImageUrl();
 
 ?>
 <div class="cart__group-container"> 
 <div class="cart__group-wrapper">
 <figure>
-<?php
-if($productImage != '')
-{
-?>
-<img src="<?php echo $productImage; ?>" alt="<?php echo $block->escapeHtml($_item->getName()) ?>" />
-<?php 
-}else{
-    ?>
-<img src="<?php echo $block->getViewFileUrl('images/product_thumb_01.jpg'); ?>" alt="<?php echo $block->escapeHtml($_item->getName()) ?>" />    
-    <?php
-}
-?>
+    <img src="<?php /* @escapeNotVerified */ echo $block->getImageUrl(); ?>" alt="<?php echo $block->escapeHtml($_item->getName()) ?>" />
 </figure>
 <div class="cart__product-wrapper">
 <h4 class="cart__product"><a href="#"><?php echo $block->escapeHtml($_item->getName()); ?></a></h4>
