@@ -11,6 +11,7 @@
 $layout = $block->getLayout(); 
 $html = $layout->renderElement($detailedInfoGroup[0]);
 $html_1 = $layout->renderElement($detailedInfoGroup[1]);
+
 ?>      
          <div class="row">
             <div class="col-sm-12">
@@ -24,13 +25,14 @@ $html_1 = $layout->renderElement($detailedInfoGroup[1]);
               </section>
             </div>
           </div>
+           <?php echo $html_1; ?>
+           <!-- 
           <div class="row">
             <div class="col-sm-12">
               <section class="section section--generic section--generic-details">
                 <div class="generic">
                   <h3 class="l-title">Extra<span>informatie</span></h3>
-                  <ul class="generic__list">
-                  <?php //echo $html_1; ?>
+                  <ul class="generic__list">                 
                     <li> <span class="generic__label">Attribuute label</span><span class="generic__value">Attribuut value    </span></li>
                     <li> <span class="generic__label">Attribuute label</span><span class="generic__value">Attribuut value    </span></li>
                     <li> <span class="generic__label">Attribuute label</span><span class="generic__value">Attribuut value    </span></li>
@@ -43,3 +45,4 @@ $html_1 = $layout->renderElement($detailedInfoGroup[1]);
               </section>
             </div>
           </div>
+ -->
