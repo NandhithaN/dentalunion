@@ -480,3 +480,7 @@ button#product-addtocart-button {
 footer.page-footer a {
     color: #fff !important;
 }
+
+input[type="number"] {
+    -moz-appearance: number-input !important;
+}
