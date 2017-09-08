@@ -484,3 +484,7 @@ footer.page-footer a {
 input[type="number"] {
     -moz-appearance: number-input !important;
 }
+
+.product.media {
+    width: 100% !important;
+}
