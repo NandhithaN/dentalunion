@@ -704,3 +704,12 @@ input[type="number"] {
 {
     display:none;
 }
+
+.page-layout-2columns-left .sidebar-additional
+{
+	width:100% !important;
+}
+.page-layout-2columns-left .sidebar-main
+{
+	width:100% !important;
+}
