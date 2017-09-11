@@ -2745,6 +2745,26 @@ input[type="number"] {
 }
 
 
+.l-filter li {
+    padding: 10px 10px 10px 42px;
+    background: #e1007a;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer
+}
+
+.l-filter li:last-child {
+    border-bottom: 0
+}
+
+.l-filter li:before {
+    content: "X";
+    font-size: 8px;
+    margin-right: 25px;
+    display: inline-block
+}
 .filter-options {   
 margin-bottom: 3.125rem !important;
 border: 1px solid #ccc !important;
