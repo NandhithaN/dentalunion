@@ -29,6 +29,11 @@
             <container name="layer.additional.info" as="layer_additional_info"/>
             <container name="layer.content.before" as="layer_content_before"/>
         </referenceBlock>
+        <referenceBlock name="catalog.navigation.state">
+            <action method="setTemplate" ifconfig="layered_navigation/general/enable">
+                <argument name="template" xsi:type="string">Mageplaza_LayeredNavigation::layer/state.phtml</argument>
+            </action>
+        </referenceBlock>
         <referenceBlock name="catalog.navigation.renderer">
             <action method="setTemplate" ifconfig="layered_navigation/general/enable">
                 <argument name="template" xsi:type="string">Mageplaza_LayeredNavigation::layer/filter.phtml</argument>
