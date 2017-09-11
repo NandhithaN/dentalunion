@@ -509,3 +509,198 @@ text-transform: uppercase;
     font-family: 'Lato', sans-serif !important;
     font-weight: bold !important;
 }
+
+/********Grouped product page css *******/
+
+.cart .cart__group {
+    margin-bottom: 10px
+}
+
+.cart .cart__group li {
+    padding: 6px 0;
+    border-bottom: 1px solid #ccc
+}
+
+@media (min-width:480px) {
+    .cart .cart__group li .cart__group-container {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+}
+
+@media (min-width:768px) {
+    .cart .cart__group li .cart__group-container {
+        display: block
+    }
+}
+
+@media (min-width:992px) {
+    .cart .cart__group li .cart__group-container {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+}
+
+.cart .cart__group .cart__product-wrapper {
+    margin-right: 15px;
+    display: inline-block
+}
+
+@media (min-width:992px) {
+    .cart .cart__group .cart__product-wrapper {
+        width: 220px;
+        margin-right: 15px
+    }
+}
+
+@media (min-width:1200px) {
+    .cart .cart__group .cart__product-wrapper {
+        width: 180px;
+        margin-right: 15px
+    }
+}
+
+.cart .cart__group .cart__product-wrapper .cart__product {
+    display: block
+}
+
+.cart .cart__group .cart__group-wrapper {
+    margin-bottom: 10px;
+    display: block
+}
+
+@media (min-width:480px) {
+    .cart .cart__group .cart__group-wrapper {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        margin-bottom: 0
+    }
+}
+
+@media (min-width:768px) {
+    .cart .cart__group .cart__group-wrapper {
+        margin-bottom: 10px;
+        display: block
+    }
+}
+
+@media (min-width:992px) {
+    .cart .cart__group .cart__group-wrapper {
+        margin-bottom: 0;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex
+    }
+}
+
+.cart .cart__group .cart__product {
+    text-transform: uppercase
+}
+
+.cart .cart__group .cart__product a {
+    color: #003f79;
+    font-size: .875rem;
+    font-weight: 700
+}
+
+.cart .cart__group .cart__product-price {
+    display: inline-block
+}
+
+.cart .cart__group .cart__product-price span {
+    color: #333;
+    font-weight: 700;
+    font-size: 1.125rem
+}
+
+.cart .cart__group form {
+    display: inline-block
+}
+
+.cart .cart__group .cart__quantity {
+    margin-left: 15px;
+    display: inline-block
+}
+
+@media (min-width:992px) {
+    .cart .cart__group .cart__quantity {
+        margin-left: 20px
+    }
+}
+
+@media (min-width:1200px) {
+    .cart .cart__group .cart__quantity {
+        margin-left: 30px
+    }
+}
+
+.cart .cart__group figure {
+    display: inline-block;
+    margin-right: 15px;
+    width: 56px
+}
+
+@media (min-width:992px) {
+    .cart .cart__group figure {
+        margin-right: 30px
+    }
+}
+
+.cart .cart__group .cart__additionalinfo span {
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.cart .cart__group .cart__additionalinfo span+span {
+    border-left: 2px solid #ccc;
+    margin-left: 5px;
+    padding-left: 5px
+}
+
+.cart .cart__group .cart__input-label {
+    margin-right: 10px;
+    margin-left: 10px
+}
+
+@media (min-width:1200px) {
+    .cart .cart__group .cart__input-label {
+        margin-left: 20px
+    }
+}
+
+.cart .cart__group--configurable li {
+    padding: 10px 0
+}
+input[type="number"] {
+    -moz-appearance: number-input !important;
+}
+.cart__price1
+{
+    display:none;
+}
+.cart__info
+{
+    display:none;
+}

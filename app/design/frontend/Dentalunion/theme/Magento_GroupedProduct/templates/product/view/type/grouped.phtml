@@ -18,213 +18,20 @@
 <?php $_associatedProducts = $block->getAssociatedProducts(); ?>
 <?php $_hasAssociatedProducts = count($_associatedProducts) > 0; ?>
 
-<style type="text/css">
-
-.cart .cart__group {
-    margin-bottom: 10px
-}
-
-.cart .cart__group li {
-    padding: 6px 0;
-    border-bottom: 1px solid #ccc
-}
-
-@media (min-width:480px) {
-    .cart .cart__group li .cart__group-container {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center
-    }
-}
-
-@media (min-width:768px) {
-    .cart .cart__group li .cart__group-container {
-        display: block
-    }
-}
-
-@media (min-width:992px) {
-    .cart .cart__group li .cart__group-container {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center
-    }
-}
-
-.cart .cart__group .cart__product-wrapper {
-    margin-right: 15px;
-    display: inline-block
-}
-
-@media (min-width:992px) {
-    .cart .cart__group .cart__product-wrapper {
-        width: 220px;
-        margin-right: 15px
-    }
-}
-
-@media (min-width:1200px) {
-    .cart .cart__group .cart__product-wrapper {
-        width: 180px;
-        margin-right: 15px
-    }
-}
-
-.cart .cart__group .cart__product-wrapper .cart__product {
-    display: block
-}
-
-.cart .cart__group .cart__group-wrapper {
-    margin-bottom: 10px;
-    display: block
-}
-
-@media (min-width:480px) {
-    .cart .cart__group .cart__group-wrapper {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        margin-bottom: 0
-    }
-}
-
-@media (min-width:768px) {
-    .cart .cart__group .cart__group-wrapper {
-        margin-bottom: 10px;
-        display: block
-    }
-}
-
-@media (min-width:992px) {
-    .cart .cart__group .cart__group-wrapper {
-        margin-bottom: 0;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex
-    }
-}
-
-.cart .cart__group .cart__product {
-    text-transform: uppercase
-}
-
-.cart .cart__group .cart__product a {
-    color: #003f79;
-    font-size: .875rem;
-    font-weight: 700
-}
-
-.cart .cart__group .cart__product-price {
-    display: inline-block
-}
-
-.cart .cart__group .cart__product-price span {
-    color: #333;
-    font-weight: 700;
-    font-size: 1.125rem
-}
-
-.cart .cart__group form {
-    display: inline-block
-}
-
-.cart .cart__group .cart__quantity {
-    margin-left: 15px;
-    display: inline-block
-}
-
-@media (min-width:992px) {
-    .cart .cart__group .cart__quantity {
-        margin-left: 20px
-    }
-}
-
-@media (min-width:1200px) {
-    .cart .cart__group .cart__quantity {
-        margin-left: 30px
-    }
-}
-
-.cart .cart__group figure {
-    display: inline-block;
-    margin-right: 15px;
-    width: 56px
-}
-
-@media (min-width:992px) {
-    .cart .cart__group figure {
-        margin-right: 30px
-    }
-}
-
-.cart .cart__group .cart__additionalinfo span {
-    color: #ccc;
-    font-size: 12px;
-    font-weight: 700
-}
-
-.cart .cart__group .cart__additionalinfo span+span {
-    border-left: 2px solid #ccc;
-    margin-left: 5px;
-    padding-left: 5px
-}
-
-.cart .cart__group .cart__input-label {
-    margin-right: 10px;
-    margin-left: 10px
-}
-
-@media (min-width:1200px) {
-    .cart .cart__group .cart__input-label {
-        margin-left: 20px
-    }
-}
-
-.cart .cart__group--configurable li {
-    padding: 10px 0
-}
-input[type="number"] {
-    -moz-appearance: number-input !important;
-}
-.cart__price
-{
-    display:none;
-}
-.cart__info
-{
-    display:none;
-}
-</style>
-
 <ul class="cart__group">
 
         <?php if ($_hasAssociatedProducts): ?>
         <?php foreach ($_associatedProducts as $_item): ?>
 <li>
 <?php
-//echo '<pre>';
-//print_r($_item);
-//echo 'ID='.$_item->getThumbnail();
 
-$productImage = $block->getImage($_item, 'product_base_image')->getImageUrl();
+$pid = $_item->getId(); 
+$imagewidth = 500;
+$imageheight = 500;
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$_product = $objectManager->get('Magento\Catalog\Model\Product')->load($pid);
+$imageHelper  = $objectManager->get('\Magento\Catalog\Helper\Image');
+$productImage = $imageHelper->init($_product, 'product_page_image_small')->setImageFile($_product->getFile())->resize($imagewidth, $imageheight)->getUrl();
 
 ?>
 <div class="cart__group-container"> 
@@ -244,7 +51,8 @@ if($productImage != '')
 ?>
 </figure>
 <div class="cart__product-wrapper">
-<h4 class="cart__product"><a href="#"><?php echo $block->escapeHtml($_item->getName()); ?></a></h4>
+<h4 class="cart__product"><a href="#"><?php echo $block->escapeHtml($_item->getName()); ?>
+</a></h4>
 <div class="cart__additionalinfo"><span><?php echo $block->escapeHtml($_item->getSku()); ?></span><span><?php echo $block->escapeHtml($_item->getSku()); ?></span></div>
 </div>
 </div>
