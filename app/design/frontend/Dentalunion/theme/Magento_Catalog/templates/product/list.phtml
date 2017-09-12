@@ -76,7 +76,10 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
                      </figure>
                         <div class="products__utilities">
                         <i>
-                          <img src="<?php echo $this->getViewFileUrl('images/icons-svg/barcode.svg'); ?>" class="l-icon" width="16" height="16" />
+
+                          <svg class="l-icon" width="16" height="16">
+                            <use xlink:href="<?php echo $this->getViewFileUrl('images/icons-svg.svg#barcode'); ?>"></use>
+                          </svg>
                           </i>
                           <i>
  <img src="<?php echo $this->getViewFileUrl('images/icons-svg/star-o.svg'); ?>" class="l-icon" width="16" height="16" />
