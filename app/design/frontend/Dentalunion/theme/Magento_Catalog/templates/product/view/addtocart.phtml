@@ -31,12 +31,14 @@ button#product-addtocart-button
 
   <div class="cart__footer">
                   <form class="cart__form">
+				   <?php if ($block->shouldRenderQuantity()): ?>
                     <div class="cart__form-group">
                       <label class="cart__input-label">AANTAI</label>                        
-                          <?php if ($block->shouldRenderQuantity()): ?>
+                         
                         <input class="cart__quantity" type="number" name="qty" min="1" max="22" value="<?php /* @escapeNotVerified */ echo $block->getProductDefaultQty() * 1 ?>" data-validate="<?php echo $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>">
-                         <?php endif; ?>
+                        
                     </div>
+					 <?php endif; ?>
                     <!-- <input class="l-btn" type="button" value="in winkelmandje"> -->
                     <button type="submit"
                     title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
