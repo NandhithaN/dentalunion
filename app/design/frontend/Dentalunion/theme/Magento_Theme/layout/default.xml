@@ -162,7 +162,7 @@
   
 
 <!-- <move element="top.search" destination="top.links" before="top.links"/> -->
-
+<referenceBlock name="navigation.sections" remove="true" />   
     </body>
 </page>
 	
