@@ -19,5 +19,7 @@
             <block class="Magento\GroupedProduct\Block\Product\View\Type\Grouped" as="product.info.grouped" template="product/view/type/default.phtml"/>
         </referenceContainer>
         <referenceBlock name="short_desc" remove="true" /> 
+		<referenceContainer name="product.info.price" remove="true" />
+		
     </body>
 </page>
