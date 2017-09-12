@@ -30,7 +30,7 @@
             </arguments>
         </referenceBlock>
         <referenceContainer name="content">
-             <container name="product.info.main.container" htmlTag="div" htmlClass="container" before="-">
+             <container name="product.info.main.container" htmlTag="" htmlClass="" before="-">
                   <container name="product.info.main.row" htmlTag="div" htmlClass="row" before="product.info.main.container">
                       <container name="product.info.main.col-sm-6" htmlTag="div" htmlClass="col-sm-6" before="product.info.main.row">
                                      <container name="product.info.media" htmlTag="div" htmlClass="product media" after="product.info.main">
