@@ -14,7 +14,8 @@
                 <container name="columns.top" label="Before Main Columns"/>
                 <container name="columns" htmlTag="div" htmlClass="container">
                     <container name="row" htmlTag="div" htmlClass="row">
-                    <container name="main" label="Main Content Container" htmlTag="div" htmlClass="col-sm-8 col-md-9"/>
+					<!-- //htmlTag="div" htmlClass="col-sm-8 col-md-9 -->
+                    <container name="main" label="Main Content Container"/>
                 </container>
                 </container>
             </container>
