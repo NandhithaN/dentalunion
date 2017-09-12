@@ -251,15 +251,17 @@ switch ($type = $block->getType()) {
 
                             <?php if (!$_item->isComposite() && $_item->isSaleable() && $type == 'related'): ?>
                                 <?php if (!$_item->getRequiredOptions()): ?>
-                                    <!-- <div class="field choice related">
-                                        <input type="checkbox" class="checkbox related" id="related-checkbox<?php /* @escapeNotVerified */ //echo $_item->getId() ?>" name="related_products[]" value="<?php /* @escapeNotVerified */ //echo $_item->getId() ?>" />
-                                        <label class="label" for="related-checkbox<?php /* @escapeNotVerified */ //echo $_item->getId() ?>"><span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span></label>
-                                    </div> -->
+                                    <div class="field choice related">
+                                        <input type="checkbox" class="checkbox related" id="related-checkbox<?php /* @escapeNotVerified */ echo $_item->getId() ?>" name="related_products[]" value="<?php /* @escapeNotVerified */ echo $_item->getId() ?>" />
+                                        <label class="label l-btn" for="related-checkbox<?php /* @escapeNotVerified */ echo $_item->getId() ?>"><span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span></label>
+                                    </div> 
+									<!--
 									<a class="l-btn" href="#" data-post='<?php /* @escapeNotVerified */ echo $_item->getId() ?>' >
 									<span>
-									<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>
+									<?php /* @escapeNotVerified */ //echo __('Add to Cart') ?>
 									</span>
 									</a>
+									-->
 
                                 <?php endif; ?>
                             <?php endif; ?>
