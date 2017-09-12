@@ -27,7 +27,7 @@ switch ($type = $block->getType()) {
             $canItemsAddToCart = $block->canItemsAddToCart();
 
             $showAddTo = true;
-            $showCart = false;
+            $showCart = true;
             $templateType = null;
             $description = false;
         }
@@ -47,7 +47,7 @@ switch ($type = $block->getType()) {
             $canItemsAddToCart = $block->canItemsAddToCart();
 
             $showAddTo = true;
-            $showCart = false;
+            $showCart = true;
             $templateType = null;
             $description = false;
         }
@@ -64,8 +64,8 @@ switch ($type = $block->getType()) {
             $limit = $block->getPositionLimit();
             $shuffle = (int) $block->isShuffled();
 
-            $showAddTo = false;
-            $showCart = false;
+            $showAddTo = true;
+            $showCart = true;
             $templateType = null;
             $description = false;
             $canItemsAddToCart = false;
@@ -84,8 +84,8 @@ switch ($type = $block->getType()) {
             $limit = $block->getItemLimit('upsell');
             $shuffle = 0;
 
-            $showAddTo = false;
-            $showCart = false;
+            $showAddTo = true;
+            $showCart = true;
             $templateType = null;
             $description = false;
             $canItemsAddToCart = false;
@@ -227,41 +227,42 @@ switch ($type = $block->getType()) {
                         <div class="products__price"><span class="products__from-price"> <span class="products__label">Van: </span><span>€ 0,00</span></span><span class="products__front-price"><span class="products__label">Voor:  </span><span>€ 0,00</span></span></div><a class="l-btn" href="#"><span>in winkelmandje     </span></a> -->
                   
                         <h3 class="products__name"><a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($_item) ?>">    
-						<?php echo $block->escapeHtml($_item->getName()) ?>
-						
-						</a></h3>
-						<?php
-						$_helper = $this->helper('Magento\Catalog\Helper\Output');
-						$_product = $block->getProduct();						
-						?>
+                        <?php echo $block->escapeHtml($_item->getName()) ?>
+                        
+                        </a></h3>
+                        <?php
+                        $_helper = $this->helper('Magento\Catalog\Helper\Output');
+                        $_product = $block->getProduct();                       
+                        ?>
 
-						<h4 class="products__brand">
-						<?php echo $_product->getResource()->getAttribute('brand')->getFrontendLabel();?>: </span><a href="#"><?php echo $_product->getResource()->getAttribute('brand')->getFrontend()->getValue($_product)?>
-						</h4>
+                        <h4 class="products__brand">
+                        <?php //echo $_product->getResource()->getAttribute('brand')->getFrontendLabel();?>: </span><a href="#"><?php //echo $_product->getResource()->getAttribute('brand')->getFrontend()->getValue($_product)?>
+                        </h4>
                     
-						<div class="products__price">
-						<span class="products__from-price"> 
-						<span class="products__label">Van: </span><span> <?php /* @escapeNotVerified */ echo $block->getProductPrice($_item); ?></span></span><span class="products__front-price">
-						<span class="products__label">Voor:  </span><span> <?php /* @escapeNotVerified */ echo $block->getProductPrice($_item); ?></span></span>
-						</div>
+                        <div class="products__price">
+                        <span class="products__from-price"> 
+                        <span class="products__label">Van: </span><span> <?php /* @escapeNotVerified */ echo $block->getProductPrice($_item); ?></span></span><span class="products__front-price">
+                        <span class="products__label">Voor:  </span><span> <?php /* @escapeNotVerified */ echo $block->getProductPrice($_item); ?></span></span>
+                        </div>
 
                             <?php if ($templateType): ?>
                                 <?php echo $block->getReviewsSummaryHtml($_item, $templateType) ?>
                             <?php endif; ?>
 
-                            <?php if (!$_item->isComposite() && $_item->isSaleable() && $type == 'related'): ?>
+                            <?php if (!$_item->isComposite() && $_item->isSaleable() && $type == 'related' || $type == 'upsell'): ?>
                                 <?php if (!$_item->getRequiredOptions()): ?>
-                                    <div class="field choice related">
-                                        <input type="checkbox" class="checkbox related" id="related-checkbox<?php /* @escapeNotVerified */ echo $_item->getId() ?>" name="related_products[]" value="<?php /* @escapeNotVerified */ echo $_item->getId() ?>" />
-                                        <label class="label l-btn" for="related-checkbox<?php /* @escapeNotVerified */ echo $_item->getId() ?>"><span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span></label>
-                                    </div> 
-									<!--
-									<a class="l-btn" href="#" data-post='<?php /* @escapeNotVerified */ echo $_item->getId() ?>' >
-									<span>
-									<?php /* @escapeNotVerified */ //echo __('Add to Cart') ?>
-									</span>
-									</a>
-									-->
+                                   <!--  <div class="field choice related">
+                                        <input type="checkbox" class="checkbox related" id="related-checkbox<?php /* @escapeNotVerified */ //echo $_item->getId() ?>" name="related_products[]" value="<?php /* @escapeNotVerified */ //echo $_item->getId() ?>" />
+                                        <label class="label l-btn" for="related-checkbox<?php /* @escapeNotVerified */ //echo $_item->getId() ?>"><span><?php /* @escapeNotVerified */ //echo __('Add to Cart') ?></span></label>
+
+                                    </div>  -->
+                                    <!--
+                                    <a class="l-btn" href="#" data-post='<?php /* @escapeNotVerified */ //echo $_item->getId() ?>' >
+                                    <span>
+                                    <?php /* @escapeNotVerified */ //echo __('Add to Cart') ?>
+                                    </span>
+                                    </a>
+                                    -->
 
                                 <?php endif; ?>
                             <?php endif; ?>
@@ -277,12 +278,12 @@ switch ($type = $block->getType()) {
                                                     </button> 
 
                                                      <!--
-													 <a class="l-btn" href="#" data-post='<?php /* @escapeNotVerified */ //echo $postData; ?>' >
+                                                     <a class="l-btn" href="#" data-post='<?php /* @escapeNotVerified */ //echo $postData; ?>' >
                                                     <span>
                                                         <?php /* @escapeNotVerified */ //echo __('Add to Cart') ?>
                                                     </span>
                                                     </a>
-													-->
+                                                    -->
                                                 <?php else: ?>
                                                     <?php $postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
                                                     $postData = $postDataHelper->getPostData($block->getAddToCartUrl($_item), ['product' => $_item->getEntityId()])
@@ -293,12 +294,12 @@ switch ($type = $block->getType()) {
                                                         <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
                                                     </button> 
                                                     <!--
-													<a class="l-btn" href="#" data-post='<?php /* @escapeNotVerified */ //echo $postData; ?>' >
+                                                    <a class="l-btn" href="#" data-post='<?php /* @escapeNotVerified */ //echo $postData; ?>' >
                                                     <span>
                                                         <?php /* @escapeNotVerified */ //echo __('Add to Cart') ?>
                                                     </span>
                                                     </a>
-													-->
+                                                    -->
                                                 <?php endif; ?>
                                             <?php else: ?>
                                                 <?php if ($_item->getIsSalable()): ?>
