@@ -300,14 +300,6 @@ styles-m.css:1 .toolbar-products .limiter {
     display: none !important;
 }
 
-.limiter {
-    float: none !important;
-    position: relative !important;
-    top: 40px !important;
-    margin-left: 60% !important;
-}
-
-
 /****************04-09-2017*******************/
 
 .sorter-options {
@@ -332,13 +324,6 @@ styles-m.css:1 .toolbar-products .limiter {
     color: #003f79 !important;
     width: auto !important;
     height: 22px !important;
-}
-
-.limiter {
-    float: none !important;
-    position: relative !important;
-    top: 40px !important;
-    margin-left: 74% !important;
 }
 
 .modes-mode {
