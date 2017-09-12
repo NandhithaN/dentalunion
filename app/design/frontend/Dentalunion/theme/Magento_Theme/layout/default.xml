@@ -115,7 +115,7 @@
  <!-- </referenceBlock>  -->
 
          <referenceContainer name="footer-container">
-            <container name="footer" as="footer" label="Page Footer" htmlTag="footer" htmlClass="page-footer">
+            <container name="footer" as="footer" label="Page Footer">
                 <!-- <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="switch/stores.phtml"/> -->
                 <!-- <block class="Magento\Framework\View\Element\Html\Links" name="footer_links">
                     <arguments>
