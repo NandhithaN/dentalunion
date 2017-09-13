@@ -19,3 +19,17 @@
 <img src="<?php echo $block->getLogoSrc() ?>"/>	
 </a>
 </h1>
+<?php 
+if ($block->isHomePage()) {
+    ?>
+	<style type="text/css">
+	main.page-main
+	{
+		max-width:100% !important;
+	}
+	
+	</style>
+
+	<?php
+}
+?>
