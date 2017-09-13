@@ -15,18 +15,7 @@ use Magento\Framework\App\Action\Action;
  * @var $block \Magento\Catalog\Block\Product\ListProduct
  */
 ?>
-<style type="text/css"> 
-span.base {    
-    left: 50%;
-    font-weight: 700;
-    font-size: 36px !important;
-    color: #003f79;
-    text-transform: uppercase;
-}
-.products .products__list li {
-    width: 33.333% !important;
-}
-</style>
+
 <div class="col-sm-8 col-md-9">
 
 <?php
@@ -99,8 +88,9 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
                                href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>">
                                 <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
                             </a>
-                        </h3>
-                         <h4 class="products__brand"> <span>Merk: </span><a href="#">Kettenbach</a></h4>
+                        </h3>                         
+                         <h4 class="products__brand"> <span><?php echo $_product->getResource()->getAttribute('brand')->getFrontendLabel();?>: </span><a href="#">
+                         <?php echo $_product->getResource()->getAttribute('brand')->getFrontend()->getValue($_product)?></a></h4>
                         <?php //echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
                         
                     <div class="products__price">
