@@ -163,8 +163,6 @@
 
 <!-- <move element="top.search" destination="top.links" before="top.links"/> -->
 <referenceBlock name="navigation.sections" remove="true" />   
-<move element="content" destination="page.wrapper" after="header.container"/>
-<move element="meet" destination="columns" after="container"/>
 
     </body>
 </page>

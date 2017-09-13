@@ -42,3 +42,16 @@ $welcomeMessage = $block->getWelcome();
     <?php break; ?>
 
 <?php endswitch; ?>
+<?php 
+if ($block->isHomePage()) {
+    ?>
+	<style type="text/css">
+	main.page-main
+	{
+		max-width:100% !important;
+	}
+	</style>
+
+	<?php
+}
+?>
