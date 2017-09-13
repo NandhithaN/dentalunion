@@ -14,8 +14,8 @@
                   </svg></a> -->
                       
                   
-<div data-block="mobile_minicart" class="minicart-wrapper">
-    <a class="action l-minicart-mobile" href="<?php /* @escapeNotVerified */ echo $block->getShoppingCartUrl(); ?>"
+<!-- <div data-block="mobile_minicart" class="minicart-wrapper"> -->
+    <a class="action l-minicart" data-block="mobile_minicart" href="<?php /* @escapeNotVerified */ echo $block->getShoppingCartUrl(); ?>"
        data-bind="scope: 'minicart_content'">
        <svg class="l-icon" width="26" height="26">
 <use xlink:href="<?php echo $this->getViewFileUrl('images/icons-svg.svg#shopping-cart'); ?>"></use>
@@ -61,4 +61,4 @@
         }
     }
     </script>
-</div>
+<!-- </div> -->
