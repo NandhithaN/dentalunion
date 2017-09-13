@@ -2978,14 +2978,14 @@ article a {
 .l-minicart-mobile{
   fill: #003f79;
 }
-@media (min-width: 991px) {
-  .mobile-wrapper .minicart-wrapper {
-    margin: 0;
-  }
-}
 
 .mobile-wrapper .minicart-wrapper {
   margin-top: 14px;
   margin-right: 15px;
+}
+@media (min-width: 991px) {
+  .mobile-wrapper .minicart-wrapper {
+    margin: 0;
+  }
 }
 /*@import end*/
