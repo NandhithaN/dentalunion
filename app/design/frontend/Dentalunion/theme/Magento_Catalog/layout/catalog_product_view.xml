@@ -33,14 +33,14 @@
              <container name="product.info.main.container" htmlTag="" htmlClass="" before="-">
                  <!--
 				 <container name="product.info.main.row" htmlTag="div" htmlClass="row" before="product.info.main.container">-->
-                      <container name="product.info.main.col-sm-6" htmlTag="div" htmlClass="col-sm-6" before="product.info.main.row">
+                      <container name="product.info.main.col-sm-6" htmlTag="div" htmlClass="col-sm-6" before="-">
                                      <container name="product.info.media" htmlTag="div" htmlClass="product media" after="product.info.main">
                 <block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image" template="product/view/gallery.phtml"/>
             </container> 
                       </container>                                               
                           
                           
-            <container name="product.info.main" htmlTag="div" htmlClass="col-sm-6" before="product.info.main.container">
+            <container name="product.info.main" htmlTag="div" htmlClass="col-sm-6">
                 <container name="cart" htmlTag="div" htmlClass="cart"> 
                <block class="Magento\Catalog\Block\Product\View" name="brand" before="-" template="product/view/brand.phtml">
                </block>     
