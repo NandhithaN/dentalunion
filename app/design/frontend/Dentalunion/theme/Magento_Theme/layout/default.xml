@@ -146,6 +146,7 @@
  <!-- <move element="minicart" destination="header-wrapper-mobile" after="btns" />  -->
 
 <move element="minicart" destination="global-header-nav-links" after="top-static-links" />
+<move element="breadcrumbs" destination="main.content" />
 <!-- <move element="mobile-minicart" destination="header-wrapper-mobile" after="logo" /> -->
 <!-- <move element="navigation.sections" destination="header.panel.wrapper"/>
 <referenceBlock name="advanced-search-link" remove="true"/> 
