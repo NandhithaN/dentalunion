@@ -62,7 +62,7 @@
                         <block class="Magento\Theme\Block\Html\Header\Logo" name="logo" before="-"/>  
                         <block class="Magento\Framework\View\Element\Template" name="btns" template="Magento_Theme::html/social_icons.phtml" />                      
                         <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" after="btns"/>
-                        <block class="Magento\Checkout\Block\Cart\Sidebar" name="mobile-minicart" as="mobile-minicart" before="top.search" template="Magento_Checkout::cart/mobile-minicart.phtml" />
+                        <block class="Magento\Checkout\Block\Cart\Sidebar" name="mobile-minicart" as="mobile-minicart" after="top.search" template="Magento_Checkout::cart/mobile-minicart.phtml" />
                        <!--  <block class="Magento\Framework\View\Element\Template" name="minicart" as="minicart" template="Magento_Checkout::cart/minicart.phtml" /> -->
                                                                        
                     </container>
