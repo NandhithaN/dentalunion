@@ -1327,7 +1327,7 @@ article a {
 
 @media (min-width: 992px) {
   .page-header .logo {
-    top: 48px;
+    top: 53px;
     position: absolute;
   }
 }
@@ -1772,7 +1772,7 @@ article a {
 @media (min-width: 992px) {
   .page-header .nav-main li.align-to-left .level0.submenu,
   .page-header .nav-main li.level0.align-to-left .level0.submenu {
-    margin-top: 50px;
+    margin-top: 40px;
     right: 0;
     left: auto;
     box-shadow: -8px 9px 20px 0px rgba(0, 0, 0, 0.4);
@@ -2968,5 +2968,24 @@ article a {
   width: 115px;
   margin-left: 10px;
 }
+@media (min-width: 991px) {
+  .l-minicart-mobile{
+    display: none;
+    }
+    
+}
 
+.l-minicart-mobile{
+  fill: #003f79;
+}
+@media (min-width: 991px) {
+  .mobile-wrapper .minicart-wrapper {
+    margin: 0;
+  }
+}
+
+.mobile-wrapper .minicart-wrapper {
+  margin-top: 14px;
+  margin-right: 15px;
+}
 /*@import end*/
