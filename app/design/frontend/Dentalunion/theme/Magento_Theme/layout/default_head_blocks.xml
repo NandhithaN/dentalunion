@@ -5,7 +5,7 @@
 	<remove src="css/styles-m.css" />    
 <css src="css/plugin.css" />
 <css src="css/main.css" />
-<!-- <script src="js/plugin.bundle.js" />
-<script src="js/script.bundle.js" />  -->
+ <script src="js/plugin.bundle.js" />
+<script src="js/script.bundle.js" />  
 </head>
 </page>
