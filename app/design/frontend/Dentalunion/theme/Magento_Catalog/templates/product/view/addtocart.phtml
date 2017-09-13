@@ -12,23 +12,6 @@
 <?php $buttonTitle = __('Add to Cart'); ?>
 <?php if ($_product->isSaleable()): ?>
 
-<style type="text/css">
-.cart .cart__form-group {
-    margin-bottom: 15px;
-    width: 35%;
-    float: left;
-}
-button#product-addtocart-button
-{
-    float: right;
-}
-    h3{
-    font-size: 24px !important;
-    font-family: Lato,sans-serif;
-    }
-</style>
-
-
   <div class="cart__footer">
                   <form class="cart__form">
 				   <?php if ($block->shouldRenderQuantity()): ?>
